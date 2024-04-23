@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function classification(pointAvg) {
+
+        if (pointAvg < 5) {
+                return "C";
+            } else {
+                if (pointAvg < 8) {
+                    return "B"
+                } else {
+                    return "A"
+                }
+            }
+    }
+    function arraypoint(array){
+            for (let i = 0; i < array.length; i++) {
+                if (isNaN(array[i])||array[i]<0||array[i]>10) {
+                    console.log('du lieu sai o so thu' + (i+1))
+                } else {
+                    classification(array[i])
+                    console.log(classification(array[i]));
+                    console.log("<br/>")
+                }
+            }
+    }
+    let myArray = [6,7,11,12];
+    arraypoint(myArray);
+    // classification(myArray);
+    // for (let j = 0; j <myArray.length ; j++) {
+    //     console.log(classification(myArray[j]))
+    // }
+    function avgArray(avgPoint){
+        let sum = 0;
+        for (let i = 0; i < avgPoint.length; i++) {
+            sum = sum + avgPoint[i];
+        }
+        let avgaArray = sum/ avgPoint.length;
+        console.log(avgaArray)
+    }
+    avgArray(myArray);
+
+</script>
+</body>
+</html>
