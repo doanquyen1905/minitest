@@ -18,23 +18,33 @@
                 }
             }
     }
-    function arraypoint(array){
-            for (let i = 0; i < array.length; i++) {
-                if (isNaN(array[i])||array[i]<0||array[i]>10) {
-                    console.log('du lieu sai o so thu' + (i+1))
+    function count(arr) {
+        let countC = 0;
+        let countB = 0;
+        let countA = 0;
+        for (let j = 0; j <arr.length ; j++) {
+            if (arr[j]<0||arr[j]>10||isNaN(arr[j])) {
+                return "du lieu sai"
+            } else {
+                if (classification(arr[j]) === "C") {
+                    countC= countC+1;
                 } else {
-                    classification(array[i])
-                    console.log(classification(array[i]));
-                    console.log("<br/>")
+                    if (classification(arr[j]) === "B") {
+                        countB = countB+1;
+                    } else {
+                        countA =countA+1;
+                    }
                 }
             }
+        }
+        let mycountC = "so bạn loại C là "+ countC;
+        let mycountB = "so bạn loại B là "+ countB;
+        let mycountA = "so bạn loaij A là "+ countA;
+        return mycountA +", "+ mycountB +", "+ mycountC;
     }
-    let myArray = [6,7,11,12];
-    arraypoint(myArray);
-    // classification(myArray);
-    // for (let j = 0; j <myArray.length ; j++) {
-    //     console.log(classification(myArray[j]))
-    // }
+    let myArray = [6,7,8,9];
+    let mycount = count(myArray);
+    console.log(mycount)
     function avgArray(avgPoint){
         let sum = 0;
         for (let i = 0; i < avgPoint.length; i++) {
